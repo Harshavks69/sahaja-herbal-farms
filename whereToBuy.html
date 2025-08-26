@@ -1,0 +1,1117 @@
+<!--// Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navContainer = document.getElementById('navContainer');
+
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileToggle.contains(event.target) && !navContainer.contains(event.target)) {
+                mobileToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+            }
+        });
+
+        // Popup functionality
+        const signupWrapper = document.getElementById('signupWrapper');
+        const signinWrapper = document.getElementById('signinWrapper');
+        const profileToggle = document.getElementById('profileToggle');
+        const signupClose = document.getElementById('signupClose');
+        const signinClose = document.getElementById('signinClose');
+        const switchToSignin = document.getElementById('switchToSignin');
+        const switchToSignup = document.getElementById('switchToSignup');
+
+        // Profile toggle to show signup
+        profileToggle.addEventListener('click', function() {
+            signupWrapper.style.display = 'block';
+            document.body.style.overflow =-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Sahaja Herbal Farms - Natural Herbal Hen Farming
+    </title>
+    <meta
+        content="Sahaja Herbal Farms specializes in herbal-based hen farming, providing natural and healthy poultry products"
+        name="description" />
+    <meta content="herbal farming, organic eggs, natural poultry, hen farming, herbal feeds" name="keywords" />
+    
+    <link href="../assets/migrated-inline.css" rel="stylesheet" />
+    
+    
+    
+    
+<!-- Externalized by refactor tool -->
+<link rel="stylesheet" href="assets/css/whereToBuy.css">
+<script src="assets/js/whereToBuy.js" defer></script>
+</head>
+
+<body>
+    <!-- Top Contact Bar Start -->
+    <div class="top-contact-bar">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,19 12,19S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z">
+                        </path>
+                    </svg>
+                    <span>
+                        Sridevi Nilayam, Sangareddy Dist, HYD
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z">
+                        </path>
+                    </svg>
+                    <span>
+                        +91-7893900122
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z">
+                        </path>
+                    </svg>
+                    <span>
+                        sahajaeggs@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Contact Bar End -->
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Section Start -->
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img alt="Sahaja Herbal Farms Logo" src="images/logo_img.png" />
+                    </div>
+                </div>
+                <!-- Logo Section End -->
+                <!-- Navigation Menu Start -->
+                <div class="nav-container" id="navContainer">
+                    <nav class="navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">
+                                    Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="benefits.html">Benefits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="whereToBuy.html">
+                                    WhereToBuy
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blogs.html">
+                                    Blogs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html">
+                                    Gallery
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recipes.html">
+                                    Recipes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">FAQ's</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contactus.html">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Navigation Menu End -->
+                <!-- Mobile Menu Toggle Start -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+                <!-- Mobile Menu Toggle End -->
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+    <!-- Demo Content 
+    <div class="container">
+        <div class="demo-content">
+            <h1 style="color: #009739; margin-bottom: 20px;">Welcome to Sahaja Herbal Farms</h1>
+            <p style="color: #666; max-width: 600px; margin: 0 auto;">
+                We specialize in herbal-based hen farming, providing natural and healthy poultry products 
+                through sustainable farming practices.
+            </p>
+        </div>
+    </div>-->
+    <!--demo content end -->
+    <!-- Middle Content start-->
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>
+            Sahaja Herbal Farms - Sections
+        </title>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+            rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Hero Section Start -->
+        <section id="hero-section">
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>
+                        Where to Buy Our Products
+                    </h1>
+                    <p>
+                        Find premium Sahaja Herbal eggs and country chicken at stores near you
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Hero Section End -->
+        <!-- Available Cities Section Start -->
+        <section id="cities-section">
+            
+            <div class="cities-container">
+                <div class="section-title">
+                    <h2>
+                        Available in Major Cities
+                    </h2>
+                    <p>
+                        Click on your city to see available stores and outlets
+                    </p>
+                </div>
+                <div class="cities-grid">
+                    <!-- Hyderabad -->
+                    <div class="city-card" onclick="openModal('hyderabadModal')">
+                        <div class="city-image">
+                            <img alt="Sahaja products available in Hyderabad" loading="lazy"
+                                src="images/sahaja_hyderabad.jpg" />
+                            <div class="city-status">
+                                Available Now
+                            </div>
+                        </div>
+                        <div class="city-label">
+                            <i class="fas fa-map-marker-alt imc-015-6b0d45">
+                            </i>
+                            HYDERABAD
+                        </div>
+                    </div>
+                    <!-- Chennai -->
+                    <div class="city-card" onclick="openModal('chennaiModal')">
+                        <div class="city-image">
+                            <img alt="Sahaja products available in Chennai" loading="lazy"
+                                src="images/sahaja_chennai.jpg" />
+                            <div class="city-status">
+                                Available Now
+                            </div>
+                        </div>
+                        <div class="city-label">
+                            <i class="fas fa-map-marker-alt imc-015-6b0d45">
+                            </i>
+                            CHENNAI
+                        </div>
+                    </div>
+                    <!-- Bangalore -->
+                    <div class="city-card" onclick="openModal('bangaloreModal')">
+                        <div class="city-image">
+                            <img alt="Sahaja products coming soon to Bangalore" loading="lazy"
+                                src="images/sahaja_Bangalore.jpg" />
+                            <div class="city-status coming-soon">
+                                Coming Soon
+                            </div>
+                        </div>
+                        <div class="city-label">
+                            <i class="fas fa-map-marker-alt imc-015-6b0d45">
+                            </i>
+                            BANGALORE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modals -->
+            <!-- Hyderabad Modal -->
+            <div class="modal" id="hyderabadModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>
+                            <i class="fas fa-store imc-015-6b0d45">
+                            </i>
+                            Available Stores in Hyderabad
+                        </h3>
+                        <button class="modal-close" onclick="closeModal('hyderabadModal')">
+                            <i class="fas fa-times">
+                            </i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="store-item">
+                            <img alt="Vijetha Super Markets" class="store-logo" src="images/vijetha.jfif" />
+                            <div class="store-name">
+                                Vijetha Super Markets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="More Super Markets" class="store-logo" src="images/moresper.jfif" />
+                            <div class="store-name">
+                                More Super Markets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="More Hyper Markets" class="store-logo" src="images/more.png" />
+                            <div class="store-name">
+                                More Hyper Markets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Reliance Smart Points" class="store-logo" src="images/smart_point_sahaja.png" />
+                            <div class="store-name">
+                                Reliance Smart Points
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="QMart" class="store-logo" src="images/Qmart_Sahaja.png" />
+                            <div class="store-name">
+                                QMart
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="ushodaya" class="store-logo" src="images/ushodaya_super_market.png" />
+                            <div class="store-name">
+                                ushodaya super market
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Sampoorna" class="store-logo" src="images/sampoorna_supermarkets.jpeg" />
+                            <div class="store-name">
+                                Sampoorna Supermarkets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Amazon" class="store-logo" src="images/amazon_sahaja.png" />
+                            <div class="store-name">
+                                Amazon
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Big Basket" class="store-logo" src="images/Big-Basket.png" />
+                            <div class="store-name">
+                                Big Basket
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Milk Basket" class="store-logo" src="images/milkBasket.jpeg" />
+                            <div class="store-name">
+                                Milk Basket
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chennai Modal -->
+            <div class="modal" id="chennaiModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>
+                            <i class="fas fa-store imc-015-6b0d45">
+                            </i>
+                            Available Stores in Chennai
+                        </h3>
+                        <button class="modal-close" onclick="closeModal('chennaiModal')">
+                            <i class="fas fa-times">
+                            </i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="store-item">
+                            <img alt="More Super Markets" class="store-logo" src="images/moresper.jfif" />
+                            <div class="store-name">
+                                More Super Markets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="More Hyper Markets" class="store-logo" src="images/more.png" />
+                            <div class="store-name">
+                                More Hyper Markets
+                            </div>
+                        </div>
+                        <div class="store-item">
+                            <img alt="Milk Basket" class="store-logo" src="images/milkBasket.jpeg" />
+                            <div class="store-name">
+                                Milk Basket
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bangalore Modal -->
+            <div class="modal" id="bangaloreModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>
+                            <i class="fas fa-clock imc-015-6b0d45">
+                            </i>
+                            Coming Soon to Bangalore
+                        </h3>
+                        <button class="modal-close" onclick="closeModal('bangaloreModal')">
+                            <i class="fas fa-times">
+                            </i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="coming-soon-content">
+                            <div class="coming-soon-animation">
+                                <div class="hen-to-home-scene">
+                                    <div class="hen">
+                                        <div class="hen-body">
+                                        </div>
+                                        <div class="hen-head">
+                                        </div>
+                                        <div class="hen-beak">
+                                        </div>
+                                        <div class="hen-comb">
+                                        </div>
+                                        <div class="hen-eye">
+                                        </div>
+                                        <div class="hen-wing">
+                                        </div>
+                                        <div class="hen-tail">
+                                        </div>
+                                    </div>
+                                    <div class="flying-egg">
+                                        <div class="egg">
+                                        </div>
+                                        <div class="egg-glow">
+                                        </div>
+                                    </div>
+                                    <div class="house">
+                                        <div class="house-base">
+                                        </div>
+                                        <div class="house-roof">
+                                        </div>
+                                        <div class="house-door">
+                                        </div>
+                                        <div class="house-window">
+                                        </div>
+                                        <div class="house-chimney">
+                                        </div>
+                                    </div>
+                                    <div class="flight-trail">
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>
+                                We're Expanding to Bangalore!
+                            </h4>
+                            <p>
+                                We're working hard to bring our premium organic eggs and country chicken to Bangalore.
+                                Stay tuned for updates on store locations and availability.
+                            </p>
+                            <p class="imc-016-9105b8">
+                                <i class="fas fa-envelope imc-017-539fa9">
+                                </i>
+                                Contact us at sahajaeggs@gmail.com for updates
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- Available Cities Section End -->
+        <!-- Partners / Availability Section Start -->
+        <section id="availability-section">
+            
+            <div class="avail-container">
+
+                <!-- Online Delivery -->
+                <div class="avail-block">
+                    <h2 class="avail-title"><span>Online Delivery</span></h2>
+                    <div aria-label="Online delivery partners" class="logo-ticker">
+                        <div class="logo-track fast">
+                            <!-- Duplicate groups for seamless loop -->
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <a aria-label="Zepto" class="logo-item" href="#"><img alt="Zepto logo"
+                                        src="images/logos/zepto.png" /></a>
+                                <a aria-label="Amazon Fresh" class="logo-item" href="#"><img alt="Amazon Fresh logo"
+                                        src="images/logos/amazon-fresh.png" /></a>
+                                <a aria-label="Blinkit" class="logo-item" href="#"><img alt="Blinkit logo"
+                                        src="images/logos/blinkit.png" /></a>
+                                <a aria-label="Swiggy Instamart" class="logo-item" href="#"><img
+                                        alt="Swiggy Instamart logo" src="images/logos/instamart.png" /></a>
+                                <a aria-label="BigBasket" class="logo-item" href="#"><img alt="BigBasket logo"
+                                        src="images/logos/bigbasket.png" /></a>
+
+                            </div>
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <a class="logo-item" href="#"><img alt="Zepto logo" src="images/logos/zepto.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Amazon Fresh logo"
+                                        src="images/logos/amazon-fresh.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Blinkit logo"
+                                        src="images/logos/blinkit.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Swiggy Instamart logo"
+                                        src="images/logos/instamart.png" /></a>
+                                <a class="logo-item" href="#"><img alt="BigBasket logo"
+                                        src="images/logos/bigbasket.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hyderabad Online Delivery -->
+                <div class="avail-block">
+                    <h2 class="avail-title" style="font-size:30px;"><span>Hyderabad</span></h2>
+                    <div aria-label="Hyderabad partners" class="logo-ticker">
+                        <div class="logo-track fast">
+                            <!-- Duplicate groups for seamless loop -->
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <a aria-label="Swiggy Instamart" class="logo-item" href="#"><img
+                                        alt="Swiggy Instamart logo" src="images/logos/instamart.png" /></a>
+                                <a aria-label="BigBasket" class="logo-item" href="#"><img alt="BigBasket logo"
+                                        src="images/logos/bigbasket.png" /></a>
+                                <a aria-label="Zepto" class="logo-item" href="#"><img alt="Zepto logo"
+                                        src="images/logos/zepto.png" /></a>
+                                <a aria-label="Amazon Fresh" class="logo-item" href="#"><img alt="Amazon Fresh logo"
+                                        src="images/logos/amazon-fresh.png" /></a>
+                                <a aria-label="Blinkit" class="logo-item" href="#"><img alt="Blinkit logo"
+                                        src="images/logos/blinkit.png" /></a>
+                            </div>
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <a class="logo-item" href="#"><img alt="Swiggy Instamart logo"
+                                        src="images/logos/instamart.png" /></a>
+                                <a class="logo-item" href="#"><img alt="BigBasket logo"
+                                        src="images/logos/bigbasket.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Zepto logo" src="images/logos/zepto.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Amazon Fresh logo"
+                                        src="images/logos/amazon-fresh.png" /></a>
+                                <a class="logo-item" href="#"><img alt="Blinkit logo"
+                                        src="images/logos/blinkit.png" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Chennai Online Delivery -->
+                <div class="avail-block">
+                    <h2 class="avail-title" style="font-size:30px; text-align:center;"><span>Chennai</span></h2>
+
+                    <!-- STATIC centered logos -->
+                    <div aria-label="Chennai partners" style="display:flex; gap:60px; align-items:center; justify-content:center; flex-wrap:wrap;
+              animation:none !important; transform:none !important; margin-top:20px;">
+
+                        <a aria-label="milkBasket" href="#">
+                            <img alt="milkBasket logo" src="images/logos/milkBasket.jpeg"
+                                style="height:60px; width:auto; display:block;" />
+                        </a>
+
+                        <a aria-label="More super market" href="#">
+                            <img alt="More super market logo" src="images/logos/moresper.jfif"
+                                style="height:60px; width:auto; display:block;" />
+                        </a>
+
+                        <a aria-label="More Hyper market" href="#">
+                            <img alt="More Hyper market logo" src="images/logos/more.png"
+                                style="height:60px; width:auto; display:block;" />
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Retail & Organic Stores -->
+                <div class="avail-block">
+                    <h2 class="avail-title"><span>Retail &amp; Organic Stores</span></h2>
+                    <div aria-label="Retail and organic stores" class="logo-ticker">
+                        <div class="logo-track">
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <span class="logo-item"><img alt="More Supermarket"
+                                        src="images/logos/more.png" /></span>
+
+
+
+                                <span class="logo-item"><img alt="Q Mart" src="images/logos/qmart.png" /></span>
+                                <span class="logo-item"><img alt="Vijetha" src="images/logos/vijetha.jfif" /></span>
+                                <span class="logo-item"><img alt="Reliance Smart Points"
+                                        src="images/logos/smart_point_sahaja.png" /></span>
+                                <span class="logo-item"><img alt="ushodaya super market"
+                                        src="images/logos/ushodaya_super_market.png" /></span>
+                                <span class="logo-item"><img alt="Sampoorna Supermarkets"
+                                        src="images/logos/sampoorna_supermarkets.jpeg" /></span>
+                                <span class="logo-item"><img alt="Amazon Fresh"
+                                        src="images/logos/amazon_sahaja.png" /></span>
+                                <span class="logo-item"><img alt="Big Basket"
+                                        src="images/logos/Big-Basket.png" /></span>
+                                <span class="logo-item"><img alt="Milk Basket"
+                                        src="images/logos/milkBasket.jpeg" /></span>
+                                <span class="logo-item"><img alt="The Meat Hub"
+                                        src="images/logos/meat-hub.png" /></span>
+                                <span class="logo-item"><img alt="Haiko Supermarket"
+                                        src="images/logos/haiko.png" /></span>
+                                <span class="logo-item"><img alt="Ideal Chicken"
+                                        src="images/logos/ideal-chicken.png" /></span>
+                            </div>
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <span class="logo-item"><img alt="More Supermarket"
+                                        src="images/logos/moresper.jfif" /></span>
+
+                                <span class="logo-item"><img alt="Q Mart" src="images/logos/qmart.png" /></span>
+                                <span class="logo-item"><img alt="Vijetha" src="images/logos/vijetha.jfifa" /></span>
+                                <span class="logo-item"><img alt="7AM" src="images/logos/7am.png" /></span>
+                                <span class="logo-item"><img alt="More Hyper market"
+                                        src="images/logos/more.png" /></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurants & Cafes -->
+                <div class="avail-block">
+                    <h2 class="avail-title"><span>Restaurant &amp; Cafes</span></h2>
+                    <div aria-label="Restaurants and cafes" class="logo-ticker">
+                        <div class="logo-track slow">
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <span class="logo-item"><img alt="Food Matters Group"
+                                        src="images/logos/food-matters-group.png" /></span>
+                                <span class="logo-item"><img alt="Maverick &amp; Farmer Coffee"
+                                        src="images/logos/maverick-farmer.png" /></span>
+                                <span class="logo-item"><img alt="TFG Cafe" src="images/logos/tfg-cafe.png" /></span>
+                                <span class="logo-item"><img alt="Trippy Goat"
+                                        src="images/logos/trippy-goat.png" /></span>
+                                <span class="logo-item"><img alt="UR Life Cafe"
+                                        src="images/logos/ur-life-cafe.png" /></span>
+                            </div>
+                            <div class="logo-group" style="display:flex; gap:60px;">
+                                <span class="logo-item"><img alt="Food Matters Group"
+                                        src="images/logos/food-matters-group.png" /></span>
+                                <span class="logo-item"><img alt="Maverick &amp; Farmer Coffee"
+                                        src="images/logos/maverick-farmer.png" /></span>
+                                <span class="logo-item"><img alt="TFG Cafe" src="images/logos/tfg-cafe.png" /></span>
+                                <span class="logo-item"><img alt="Trippy Goat"
+                                        src="images/logos/trippy-goat.png" /></span>
+                                <span class="logo-item"><img alt="UR Life Cafe"
+                                        src="images/logos/ur-life-cafe.png" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Partners / Availability Section End -->
+    </body>
+
+    </html>
+    <!-- Middle Content End-->
+    <!-- SignUp Popup -->
+    <div class="signup_wrapper" id="signupWrapper">
+        <div class="signup_inner">
+            <div class="signup_details">
+                <div class="site_logo">
+                    <a href="javascript:void(0)">
+                        <img alt="Sahaja Herbal Farms Logo" class="sign-logo" src="images/logo_img.png" />
+                    </a>
+                </div>
+                <h3>
+                    Welcome to Sahaja Herbal Farms
+                </h3>
+                <p>
+                    Experience the finest quality herbal eggs and poultry products from our natural farming practices.
+                </p>
+                <a class="clv_btn white_btn pop_signin" href="javascript:;" id="switchToSignin">
+                    Sign In
+                </a>
+                <ul class="social_links">
+                    <li>
+                        <a href="https://www.facebook.com/Sahaja030917">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-facebook">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-twitter">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=917893900122&amp;app=facebook&amp;entry_point=page_cta">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-whatsapp">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-youtube-play">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="signup_form_section">
+                <h4>
+                    Create Account
+                </h4>
+                <div class="underline">
+                </div>
+                <form id="signupForm">
+                    <div class="form_block">
+                        <input class="form_field" name="name" placeholder="Full Name" required="" type="text" />
+                    </div>
+                    <div class="form_block">
+                        <input class="form_field" name="email" placeholder="Email Address" required="" type="email" />
+                    </div>
+                    <div class="form_block">
+                        <input class="form_field" name="password" placeholder="Password" required="" type="password" />
+                    </div>
+                    <button class="clv_btn" type="submit">
+                        Sign Up
+                    </button>
+                </form>
+                <div class="social_button_section">
+                    <a class="fb_btn" href="javascript:;">
+                        <span>
+                            📘
+                        </span>
+                        <span>
+                            Facebook
+                        </span>
+                    </a>
+                    <a class="google_btn" href="javascript:;">
+                        <span>
+                            🔍
+                        </span>
+                        <span>
+                            Google
+                        </span>
+                    </a>
+                </div>
+                <span class="success_close" id="signupClose">
+                    <svg height="20px" viewbox="0 0 212.982 212.982" width="20px">
+                        <path
+                            d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
+                            fill="#9dc709">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- SignIn Popup
+    <div class="signin_wrapper" id="signinWrapper">
+        <div class="signup_inner">
+            <div class="signup_details">
+                <div class="site_logo">
+                    <a href="#"><img src="images/logo_img.png" alt="Sahaja Herbal Farms Logo"></a>
+                </div>
+                <h3>Welcome Back to Sahaja Herbal Farms</h3>
+                <p>Sign in to access your account and continue enjoying our premium herbal farming products.</p>
+                <a href="javascript:;" class="clv_btn white_btn pop_signup" id="switchToSignup">Sign Up</a>
+                <ul class="social_links">
+                    <li><a href="javascript:;"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+                </ul>
+            </div>
+            <div class="signup_form_section">
+                <h4>Sign In Account</h4>
+                <div class="underline"></div>
+                <form id="signinForm">
+                    <div class="form_block">
+                        <input type="email" class="form_field" placeholder="Email Address" name="email" required>
+                    </div>
+                    <div class="form_block">
+                        <input type="password" class="form_field" placeholder="Password" name="password" required>
+                    </div>
+                    <button type="submit" class="clv_btn">Sign In</button>
+                </form>
+                <div class="social_button_section">
+                    <a href="javascript:;" class="fb_btn">
+                        <span>📘</span>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="javascript:;" class="google_btn">
+                        <span>🔍</span>
+                        <span>Google</span>
+                    </a>
+                </div>
+                <span class="success_close" id="signinClose">
+                    <svg viewBox="0 0 212.982 212.982" width="20px" height="20px">
+                        <path fill="#9dc709" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+     Profile Toggle 
+    <div class="profile_toggle" id="profileToggle">
+        <a href="javascript:;"><img src="images/rooster.png" width="80%" height="80%" alt="Profile"></a>
+    </div>-->
+    <!-- Customer Testimonials Section Start -->
+    <section id="testimonials-section">
+        
+        <div class="testimonials-container">
+            <h2 class="testimonials-title"><span>What People Love About Us</span></h2>
+            <div class="testimonial-slider" id="sah-testimonial-slider">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        "Health is my agent and these eggs very well cater to it. Definitely include them in my diet.
+                        Very smooth customer service too."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Jay Kanth</h4>
+                            <p>Chennai</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        "I have never tasted eggs like this before, and have fallen in love with them. Will definitely
+                        recommend it to others."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Avunoori Srinivas</h4>
+                            <p>Chennai</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        "I have been searching for unadulterated Eggs and Chicken, and finally found them. Now I feel
+                        safe about what I feed my family. Very delicious and authentic."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Rajeev Reddy</h4>
+                            <p>Hyderabad</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        "My question of finding good quality Eggs &amp; Country chicken has finally been answered with
+                        this one."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Jay Kanth</h4>
+                            <p>Chennai</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        "Really Good, I have switched from regular eggs to this Sahaja eggs and Country Chicken, the
+                        change was worth it."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Satisfied Customer</h4>
+                            <p>Chennai</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" onclick="sahCurrentSlide(1)"></span>
+                <span class="dot" onclick="sahCurrentSlide(2)"></span>
+                <span class="dot" onclick="sahCurrentSlide(3)"></span>
+                <span class="dot" onclick="sahCurrentSlide(4)"></span>
+                <span class="dot" onclick="sahCurrentSlide(5)"></span>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Customer Testimonials Section End -->
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <!-- Top Social Bar -->
+        <div class="social-top-bar">
+            <div class="container">
+                <div class="social-content">
+                    <span>
+                        Get connected with us on social networks:
+                    </span>
+                    <div class="social-icons">
+                        <a class="social-icon facebook" href="https://www.facebook.com/sahajaherbalfarmsofficiall/"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    fill="#3b5998">
+                                </path>
+                            </svg>
+                        </a>
+                        <!--<a href="#" class="social-icon twitter" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="#1da1f2"
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a> -->
+                        <a class="social-icon instagram" href="https://www.instagram.com/sahajaherbalfarmsofficial/"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                    fill="#e4405f">
+                                </path>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-icon whatsapp" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="#25d366"
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488" />
+                            </svg>
+                        </a>-->
+                        <a class="social-icon youtube" href="https://www.youtube.com/@sahajaherbalfarmsofficial"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                    fill="#ff0000">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Company Info -->
+                    <div class="footer-section company-section">
+                        <div class="footer-logo">
+                            <div class="logo-container">
+                                <img alt="Sahaja Herbal Farms Logo" src="images/logo_img.png" />
+                            </div>
+                        </div>
+                        <p class="company-desc">
+                            Sahaja Herbal Farms provides quality rich, healthy and tasty Country Chicken, Fresh Eggs,
+                            Mutton and
+                            Sea Food
+                        </p>
+                    </div>
+                    <!-- Products Section -->
+                    <div class="footer-section">
+                        <h4>
+                            PRODUCTS
+                        </h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a class="footer-product-link" data-category="eggs" href="products.html#eggs-section">
+                                    Fresh Eggs
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="chicken"
+                                    href="products.html#chicken-section">
+                                    Fresh Chicken
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="seafood"
+                                    href="products.html#seafood-section">
+                                    Sea Food
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="mutton"
+                                    href="products.html#mutton-section">
+                                    Fresh Mutton
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="marinate"
+                                    href="products.html#marinate-section">
+                                    Marinate Items
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="pickles"
+                                    href="products.html#pickles-section">
+                                    Pickles (Veg &amp; Nonveg)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Products Section end-->
+                    <!-- Useful Links Section -->
+                    <div class="footer-section">
+                        <h4>
+                            USEFUL LINKS
+                        </h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#gallery">
+                                    Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#videos">
+                                    Videos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#faq">
+                                    Frequently Asked questions?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#branches">
+                                    Branches
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Contact Section -->
+                    <!-- Contact Section (Fully Isolated) -->
+                    <div class="footer-section contact-section">
+                        <h4>
+                            CONTACT
+                        </h4>
+                        <div class="contact-info-footer">
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    🏠
+                                </span>
+                                <p>
+                                    Sridevi Nilayam, Road No. 2D, H.No. 5-13/A-22/7/A-23, Ground Floor, Sai Ram Enclave,
+                                    Phase 1, Ameenpur (V)(M), Miyapur, Sangareddy Dist, Telangana - 502032
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    ✉️
+                                </span>
+                                <a class="contact-link" href="mailto:info@sahajafarms.com">
+                                    info@sahajafarms.com
+                                </a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    📞
+                                </span>
+                                <a class="contact-link" href="tel:+917997658384">
+                                    +91-7997658384
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>
+                        © 2025 Copyright: Sahaja herbal farms
+                    </p>
+                    <div class="footer-logo-small">
+                        <img alt="Sahaja Logo" src="images/logo_img.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    
+</body>
+
+</html>

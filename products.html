@@ -1,0 +1,2829 @@
+<!--// Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navContainer = document.getElementById('navContainer');
+
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileToggle.contains(event.target) && !navContainer.contains(event.target)) {
+                mobileToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+            }
+        });
+
+        // Popup functionality
+        const signupWrapper = document.getElementById('signupWrapper');
+        const signinWrapper = document.getElementById('signinWrapper');
+        const profileToggle = document.getElementById('profileToggle');
+        const signupClose = document.getElementById('signupClose');
+        const signinClose = document.getElementById('signinClose');
+        const switchToSignin = document.getElementById('switchToSignin');
+        const switchToSignup = document.getElementById('switchToSignup');
+
+        // Profile toggle to show signup
+        profileToggle.addEventListener('click', function() {
+            signupWrapper.style.display = 'block';
+            document.body.style.overflow =-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Sahaja Herbal Farms - Natural Herbal Hen Farming
+    </title>
+    <link href="style.css" rel="stylesheet" />
+    <meta
+        content="Sahaja Herbal Farms specializes in herbal-based hen farming, providing natural and healthy poultry products"
+        name="description" />
+    <meta content="herbal farming, organic eggs, natural poultry, hen farming, herbal feeds" name="keywords" />
+    
+    <link href="../assets/migrated-inline.css" rel="stylesheet" />
+    
+    
+    
+    
+<!-- Externalized by refactor tool -->
+<link rel="stylesheet" href="assets/css/products.css">
+<script src="assets/js/products.js" defer></script>
+</head>
+
+<body>
+    <!-- Top Contact Bar Start -->
+    <div class="top-contact-bar">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,19 12,19S6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z">
+                        </path>
+                    </svg>
+                    <span>
+                        Sridevi Nilayam, Sangareddy Dist, HYD
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z">
+                        </path>
+                    </svg>
+                    <span>
+                        +91-7893900122
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewbox="0 0 24 24">
+                        <path
+                            d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z">
+                        </path>
+                    </svg>
+                    <span>
+                        sahajaeggs@gmail.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Contact Bar End -->
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Section Start -->
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <img alt="Sahaja Herbal Farms Logo" src="images/logo_img.png" />
+                    </div>
+                </div>
+                <!-- Logo Section End -->
+                <!-- Navigation Menu Start -->
+                <div class="nav-container" id="navContainer">
+                    <nav class="navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="products.html">
+                                    Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="benefits.html">Benefits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="whereToBuy.html">
+                                    WhereToBuy
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blogs.html">
+                                    Blogs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html">
+                                    Gallery
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recipes.html">
+                                    Recipes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">FAQ's</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contactus.html">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Navigation Menu End -->
+                <!-- Mobile Menu Toggle Start -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+                <!-- Mobile Menu Toggle End -->
+            </div>
+        </div>
+    </header>
+    <!-- Main Header End -->
+    <!-- Demo Content 
+    <div class="container">
+        <div class="demo-content">
+            <h1 style="color: #009739; margin-bottom: 20px;">Welcome to Sahaja Herbal Farms</h1>
+            <p style="color: #666; max-width: 600px; margin: 0 auto;">
+                We specialize in herbal-based hen farming, providing natural and healthy poultry products 
+                through sustainable farming practices.
+            </p>
+        </div>
+    </div>-->
+    <!--demo content end -->
+    <!--MIDDLE CONTENT START-->
+    <!-- Middle Content start-->
+    <!-- Hero Section Start -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Premium Herbal Farm Products
+                        </h1>
+                        <p class="hero-subtitle">
+                            Fresh, healthy, and naturally raised with herbal goodness
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">
+                                    100%
+                                </span>
+                                <span class="stat-label">
+                                    Herbal Fed
+                                </span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">
+                                    24hrs
+                                </span>
+                                <span class="stat-label">
+                                    Fresh Daily
+                                </span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">
+                                    0
+                                </span>
+                                <span class="stat-label">
+                                    Chemicals
+                                </span>
+                            </div>
+                        </div>
+                        <a class="cta-button" href="#products">
+                            🛒 Shop Now
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img alt="Fresh Herbal Farm Products" class="main-image" loading="lazy"
+                            src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&amp;h=400&amp;fit=crop" />
+                        <div class="floating-badge">
+                            <span>
+                                🏆 Premium Quality
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Product Categories Navigation Start -->
+    <section class="category-nav">
+        <div class="container">
+            <div class="category-tabs">
+                <button aria-label="Show all products" class="tab-btn active" data-category="all">
+                    🌟 All Products
+                </button>
+                <button aria-label="Show egg products" class="tab-btn" data-category="eggs">
+                    🥚 Fresh Eggs
+                </button>
+                <button aria-label="Show chicken products" class="tab-btn" data-category="chicken">
+                    🐔 Fresh Chicken
+                </button>
+                <button aria-label="Show seafood products" class="tab-btn" data-category="seafood">
+                    🦐 Sea Food
+                </button>
+                <button aria-label="Show mutton products" class="tab-btn" data-category="mutton">
+                    🐑 Fresh Mutton
+                </button>
+                <button aria-label="Show marinated products" class="tab-btn" data-category="marinate">
+                    🧂 Marinate Items
+                </button>
+                <button aria-label="Show pickle products" class="tab-btn" data-category="pickles">
+                    🫙 Pickles (Veg &amp; Nonveg)
+                </button>
+                <!--<button class="tab-btn" data-category="recipes" aria-label="Show recipe products">
+                📖 Recipes
+            </button>-->
+            </div>
+            <div class="whatsapp-info">
+                <span class="whatsapp-text">
+                    📱 Order via WhatsApp:
+                    <a class="whatsapp-link" href="https://wa.me/917997658384" rel="noopener" target="_blank">
+                        7997658384
+                    </a>
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- Product Categories Navigation End -->
+    <!-- Products Section Start -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <!-- Eggs Section -->
+            <div class="product-category-section" data-category="eggs" id="eggs-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🥚 Premium Herbal Eggs
+                    </h2>
+                    <p class="section-subtitle">
+                        Naturally enriched with herbal nutrition for better health
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Free Range Brown Eggs -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Sahaja Free Range Brown Eggs" class="product-image" itemprop="image"
+                                    loading="lazy" src="images/free-range-brown-eggs.jpg" />
+                                <div class="product-badge free-range">
+                                    🌾 Free Range
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Premium Collection
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Sahaja Free Range Brown Eggs
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌿 Herbal Fed
+                                    </span>
+                                    <span class="feature-tag">
+                                        🏃‍♀️ Free Range
+                                    </span>
+
+                                </div>
+                                <div class="pack-selector">
+                                    <div class="pack-option">
+                                        <input checked="" id="fr6" name="freerange" type="radio" value="6pack-120" />
+                                        <label for="fr6">
+                                            6 Pack - ₹120
+                                        </label>
+                                    </div>
+                                    <div class="pack-option">
+                                        <input id="fr30" name="freerange" type="radio" value="30pack-79" />
+                                        <label for="fr30">
+                                            30 Pack - ₹79
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            127
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Sahaja Free Range Brown Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Free Range Brown Eggs', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Vitamin D Eggs -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Sahaja Vitamin D Enriched Eggs" class="product-image" itemprop="image"
+                                    loading="lazy" src="images/vitamin-d-eggs.jpg" />
+                                <div class="product-badge vitamin">
+                                    ☀️ Vitamin D
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Health Plus Collection
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Sahaja Vitamin+ Eggs
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        ☀️ Vitamin D
+                                    </span>
+                                    <span class="feature-tag">
+                                        🛡️ Immunity
+                                    </span>
+
+                                </div>
+                                <div class="pack-selector">
+                                    <div class="pack-option">
+                                        <input checked="" id="vd6" name="vitamind" type="radio" value="6pack-140" />
+                                        <label for="vd6">
+                                            6 Pack - ₹140
+                                        </label>
+                                    </div>
+                                    <div class="pack-option">
+                                        <input id="vd30" name="vitamind" type="radio" value="30pack-79" />
+                                        <label for="vd30">
+                                            30 Pack - ₹79
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.9
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            89
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Sahaja Vitamin D Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Vitamin D Eggs', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Herbal Eggs -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Sahaja Premium Herbal Eggs" class="product-image" itemprop="image"
+                                    loading="lazy" src="images/herbal-eggs.jpg" />
+                                <div class="product-badge herbal">
+                                    🌿 Herbal
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Herbal Premium
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Sahaja Herbal Eggs
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌿 Pure Herbal
+                                    </span>
+                                    <span class="feature-tag">
+                                        🥇 Premium
+                                    </span>
+
+                                </div>
+                                <div class="pack-selector">
+                                    <div class="pack-option">
+                                        <input checked="" id="h6" name="herbal" type="radio" value="6pack-160" />
+                                        <label for="h6">
+                                            6 Pack - ₹160
+                                        </label>
+                                    </div>
+                                    <div class="pack-option">
+                                        <input id="h30" name="herbal" type="radio" value="30pack-49" />
+                                        <label for="h30">
+                                            30 Pack - ₹49
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            5.0
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            156
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Sahaja Herbal Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Herbal Eggs', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Farm Fresh Eggs -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Sahaja Farm Fresh Eggs" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/farm-fresh-eggs.jpg" />
+                                <div class="product-badge fresh">
+                                    🌅 Farm Fresh
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Daily Fresh
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Sahaja Farm Fresh Eggs
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌅 Daily Fresh
+                                    </span>
+                                    <span class="feature-tag">
+                                        🏡 Farm Direct
+                                    </span>
+
+                                </div>
+                                <div class="pack-selector">
+                                    <div class="pack-option">
+                                        <input checked="" id="f6" name="fresh" type="radio" value="6pack-100" />
+                                        <label for="f6">
+                                            6 Pack - ₹100
+                                        </label>
+                                    </div>
+                                    <div class="pack-option">
+                                        <input id="f30" name="fresh" type="radio" value="30pack-39" />
+                                        <label for="f30">
+                                            30 Pack - ₹39
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            203
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Sahaja Farm Fresh Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Farm Fresh Eggs', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Sahaja Country Eggs" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Sahaja-country-eggs.jpg" />
+                                <div class="product-badge herbal">🏡 Country</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Premium Collection</span>
+                                <h3 class="product-title" itemprop="name">Sahaja Country Eggs</h3>
+                                <div class="product-features"><span class="feature-tag">🌿 Natural</span><span
+                                        class="feature-tag">🏡 Country</span></div>
+                                <div class="pack-selector">
+                                    <div class="pack-option"><input checked="" id="sa6" name="sahajacountryeggs"
+                                            type="radio" value="6pack-180" /><label for="sa6">6 Pack - ₹180</label>
+                                    </div>
+                                    <div class="pack-option"><input id="sa30" name="sahajacountryeggs" type="radio"
+                                            value="30pack-79" /><label for="sa30">30 Pack - ₹79</label></div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Sahaja Country Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Country Eggs', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Sahaja Kadaknath Eggs" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/sahaja-kadaknath-eggs.jpg" />
+                                <div class="product-badge premium">🖤 Kadaknath</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Heritage Collection</span>
+                                <h3 class="product-title" itemprop="name">Sahaja Kadaknath Eggs</h3>
+                                <div class="product-features"><span class="feature-tag">🖤 Kadaknath</span><span
+                                        class="feature-tag">🌿 Herbal Fed</span></div>
+                                <div class="pack-selector">
+                                    <div class="pack-option"><input checked="" id="sa6" name="sahajakadaknatheggs"
+                                            type="radio" value="6pack-160" /><label for="sa6">6 Pack - ₹160</label>
+                                    </div>
+                                    <div class="pack-option"><input id="sa30" name="sahajakadaknatheggs" type="radio"
+                                            value="30pack-79" /><label for="sa30">30 Pack - ₹79</label></div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Sahaja Kadaknath Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Kadaknath Eggs', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <!--<div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Sahaja Akalbal Eggs" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/sahaja-akalbal-eggs.jpg" />
+                                <div class="product-badge bestseller">🥚 Special</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Special Collection</span>
+                                <h3 class="product-title" itemprop="name">Sahaja Akalbal Eggs</h3>
+                                <div class="product-features"><span class="feature-tag">🌿 Natural</span><span
+                                        class="feature-tag">🥇 Premium</span>
+                                </div>
+                                <div class="pack-selector">
+                                    <div class="pack-option"><input checked="" id="sa6" name="sahajaakalbaleggs"
+                                            type="radio" value="6pack-160" /><label for="sa6">6 Pack - ₹160</label>
+                                    </div>
+                                    <div class="pack-option"><input id="sa30" name="sahajaakalbaleggs" type="radio"
+                                            value="30pack-650" /><label for="sa30">30 Pack - ₹650</label></div>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Sahaja Akalbal Eggs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Sahaja Akalbal Eggs', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>-->
+                </div>
+            </div>
+            <!-- Chicken Section -->
+            <div class="product-category-section" data-category="chicken" id="chicken-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🐔 Premium Fresh Chicken
+                    </h2>
+                    <p class="section-subtitle">
+                        Naturally raised chicken with herbal feed for superior taste
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Chicken Wings -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fresh Chicken Wings" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/Chicken-Wings.jpg" />
+                                <div class="product-badge fresh">
+                                    🍗 Fresh Cut
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Chicken Parts
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Chicken Wings
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌿 Herbal Fed
+                                    </span>
+                                    <span class="feature-tag">
+                                        🥇 Premium
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹280
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.6
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            92
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Chicken Wings to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Wings', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Chicken Liver -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fresh Chicken Liver" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/chicken-liver.jpg" />
+                                <div class="product-badge organ">
+                                    🫀 Organ Meat
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Organ Meat
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Chicken Liver
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        💪 Iron Rich
+                                    </span>
+                                    <span class="feature-tag">
+                                        🧠 Nutritious
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹160
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.4
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            67
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Chicken Liver to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Liver', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Whole Chicken -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Whole Chicken Bird" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/whole-chicken.jpg" />
+                                <div class="product-badge bestseller">
+                                    🏆 Best Seller
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Whole Bird
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Whole Chicken Bird
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🐔 Complete Bird
+                                    </span>
+                                    <span class="feature-tag">
+                                        💰 Best Value
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹220
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            198
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Whole Chicken Bird to cart" class="add-cart-btn"
+                                    onclick="addToCart('Whole Chicken Bird', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Chicken Breast -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Chicken Breast Boneless" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/chicken-breast.jpg" />
+                                <div class="product-badge premium">
+                                    💎 Premium
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Premium Cuts
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Chicken Breast Boneless
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🦴 Boneless
+                                    </span>
+                                    <span class="feature-tag">
+                                        💪 Lean Protein
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹320
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.9
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            234
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Chicken Breast Boneless to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Breast Boneless', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Chicken Keema -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Chicken Keema Minced" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/Chicken-Keema.jpg" />
+                                <div class="product-badge special">
+                                    ⚡ Ready to Cook
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Processed Meat
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Chicken Keema
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        ✂️ Fresh Minced
+                                    </span>
+                                    <span class="feature-tag">
+                                        ⚡ Ready Cook
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹260
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            145
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Chicken Keema to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Keema', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Chicken Curry Cut" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/chicken-curry-cut.jpg" />
+                                <div class="product-badge fresh">🍗 Fresh Cut</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Chicken Cuts</span>
+                                <h3 class="product-title" itemprop="name">Chicken Curry Cut</h3>
+                                <div class="product-features"><span class="feature-tag">🍖 Bone-in</span><span
+                                        class="feature-tag">🌿 Herbal Fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹260</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Chicken Curry Cut to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Curry Cut', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Chicken Legs" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/chicken-legs.jpg" />
+                                <div class="product-badge fresh">🍗 Fresh Cut</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Chicken Parts</span>
+                                <h3 class="product-title" itemprop="name">Chicken Legs</h3>
+                                <div class="product-features"><span class="feature-tag">🍖 Juicy</span><span
+                                        class="feature-tag">🌿 Herbal Fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹220</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Chicken Legs to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Legs', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Chicken Drumstick" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/chicken-drumstick.jpg" />
+                                <div class="product-badge fresh">🍗 Fresh Cut</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Chicken Parts</span>
+                                <h3 class="product-title" itemprop="name">Chicken Drumstick</h3>
+                                <div class="product-features"><span class="feature-tag">🍖 Meaty</span><span
+                                        class="feature-tag">🌿 Herbal Fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹280</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Chicken Drumstick to cart" class="add-cart-btn"
+                                    onclick="addToCart('Chicken Drumstick', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- Sea Food Section -->
+            <div class="product-category-section" data-category="seafood" id="seafood-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🦐 Premium Sea Food
+                    </h2>
+                    <p class="section-subtitle">
+                        Fresh from the ocean to your plate
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Fresh Prawns -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fresh Jumbo Prawns" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/prawns.jpg" />
+                                <div class="product-badge fresh">
+                                    🌊 Fresh Catch
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Prawns
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Jumbo Sea Prawns
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🐚 Shell On
+                                    </span>
+                                    <span class="feature-tag">
+                                        🧊 Fresh Frozen
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹450
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            89
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Jumbo Sea Prawns to cart" class="add-cart-btn"
+                                    onclick="addToCart('Jumbo Sea Prawns', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Fresh Fish -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fresh Pomfret Fish" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/fresh-fish.jpg" />
+                                <div class="product-badge fresh">
+                                    🐟 Fresh Catch
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Fish
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Fresh White Pomfret
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🐟 Whole Fish
+                                    </span>
+                                    <span class="feature-tag">
+                                        🧊 Ice Fresh
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹600
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            112
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Fresh White Pomfret to cart" class="add-cart-btn"
+                                    onclick="addToCart('Fresh White Pomfret', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Squid -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fresh Squid" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/squid.jpg" />
+                                <div class="product-badge fresh">
+                                    🦑 Fresh Catch
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Squid
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Fresh Squid Rings
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🔪 Cleaned
+                                    </span>
+                                    <span class="feature-tag">
+                                        🧊 Fresh Frozen
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹380
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.5
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            76
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Fresh Squid Rings to cart" class="add-cart-btn"
+                                    onclick="addToCart('Fresh Squid Rings', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Connie Seer Fish" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/connie-seer-fish.jpg" />
+                                <div class="product-badge fresh">🐟 Fresh Catch</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Fish</span>
+                                <h3 class="product-title" itemprop="name">Connie Seer Fish</h3>
+                                <div class="product-features"><span class="feature-tag">🐟 Whole/Cut</span><span
+                                        class="feature-tag">🧊 Ice Fresh</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹500</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Connie Seer Fish to cart" class="add-cart-btn"
+                                    onclick="addToCart('Connie Seer Fish', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- Fresh Mutton Section -->
+            <div class="product-category-section" data-category="mutton" id="mutton-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🐑 Premium Fresh Mutton
+                    </h2>
+                    <p class="section-subtitle">
+                        Tender and flavorful meat from grass-fed lambs
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Mutton Curry Cut -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Mutton Curry Cut" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/mutton-curry.jpg" />
+                                <div class="product-badge fresh">
+                                    🔪 Fresh Cut
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Mutton Cuts
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Mutton Curry Cut
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🍖 Bone-in
+                                    </span>
+                                    <span class="feature-tag">
+                                        🌿 Grass-fed
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹750
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            134
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Mutton Curry Cut to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Curry Cut', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Mutton Biryani Cut -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Mutton Biryani Cut" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/mutton-biryani.jpg" />
+                                <div class="product-badge special">
+                                    🍛 Biryani Special
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Mutton Cuts
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Mutton Biryani Cut
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🍖 Perfect Size
+                                    </span>
+                                    <span class="feature-tag">
+                                        🌿 Grass-fed
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹780
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.9
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            187
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Mutton Biryani Cut to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Biryani Cut', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Mutton Keema -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Mutton Keema" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/mutton-keema.jpg" />
+                                <div class="product-badge ready">
+                                    ⚡ Ready to Cook
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Minced Mutton
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Mutton Keema
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        ✂️ Fresh Minced
+                                    </span>
+                                    <span class="feature-tag">
+                                        🌿 Grass-fed
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹800
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            98
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Mutton Keema to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Keema', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Boneless" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton Boneless.jpg" />
+                                <div class="product-badge premium">💎 Premium</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Mutton Cuts</span>
+                                <h3 class="product-title" itemprop="name">Mutton Boneless</h3>
+                                <div class="product-features"><span class="feature-tag">🦴 Boneless</span><span
+                                        class="feature-tag">🌿 Grass-fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹700</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Boneless to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Boneless', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Liver" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton Liver.jpg" />
+                                <div class="product-badge organ">🫀 Organ Meat</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Organ Meat</span>
+                                <h3 class="product-title" itemprop="name">Mutton Liver</h3>
+                                <div class="product-features"><span class="feature-tag">💪 Iron Rich</span><span
+                                        class="feature-tag">🧠 Nutritious</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹900</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Liver to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Liver', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Bones (Paya)" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton Bones (Paya).jpg" />
+                                <div class="product-badge fresh">🍲 Soup Cut</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Bones</span>
+                                <h3 class="product-title" itemprop="name">Mutton Bones (Paya)</h3>
+                                <div class="product-features"><span class="feature-tag">🍖 For Soup</span><span
+                                        class="feature-tag">🌿 Grass-fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹800</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Bones (Paya) to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Bones (Paya)', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Brain (Bheja)" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton Brain (Bheja).jpg" />
+                                <div class="product-badge organ">🫀 Organ Meat</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Organ Meat</span>
+                                <h3 class="product-title" itemprop="name">Mutton Brain (Bheja)</h3>
+                                <div class="product-features"><span class="feature-tag">🧠 Delicacy</span><span
+                                        class="feature-tag">🌿 Grass-fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹750</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Brain (Bheja) to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Brain (Bheja)', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Soup Bones" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton Soup Bones.jpg" />
+                                <div class="product-badge fresh">🍲 Soup Cut</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Bones</span>
+                                <h3 class="product-title" itemprop="name">Mutton Soup Bones</h3>
+                                <div class="product-features"><span class="feature-tag">🍲 Broth Base</span><span
+                                        class="feature-tag">🌿 Grass-fed</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹850</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Soup Bones to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Soup Bones', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container"><img alt="Mutton Lacpara" class="product-image"
+                                    itemprop="image" loading="lazy"
+                                    onerror="this.onerror=null;this.src='https://via.placeholder.com/600x400?text=Image+Coming+Soon';"
+                                    src="images/Mutton_Lacpara.png" />
+                                <div class="product-badge special">⭐ Special</div>
+                                <div aria-label="Add to wishlist" class="like-btn">❤️</div>
+                            </div>
+                            <div class="product-info"><span class="product-category">Special Cut</span>
+                                <h3 class="product-title" itemprop="name">Mutton Lacpara</h3>
+                                <div class="product-features"><span class="feature-tag">🌿 Grass-fed</span><span
+                                        class="feature-tag">🥩 Special</span></div>
+                                <div class="price-display"><span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer"><span itemprop="price">₹780</span><span
+                                            class="unit">/kg</span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span></div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">⭐⭐⭐⭐⭐</div><span class="rating-text">(New item)</span>
+                                </div><button aria-label="Add Mutton Lacpara to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Lacpara', this)">🛒 Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- Marinate Items Section -->
+            <div class="product-category-section" data-category="marinate" id="marinate-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🧂 Premium Marinated Items
+                    </h2>
+                    <p class="section-subtitle">
+                        Ready-to-cook marinated meats for delicious meals
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Tandoori Chicken -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Tandoori Chicken Marinated" class="product-image" itemprop="image"
+                                    loading="lazy" src="images/tandoori-chicken.jpg" />
+                                <div class="product-badge ready">
+                                    🍗 Ready to Grill
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Chicken Marinades
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Tandoori Chicken
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🔥 Authentic Spices
+                                    </span>
+                                    <span class="feature-tag">
+                                        ⚡ Ready to Cook
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹350
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.9
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            201
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Tandoori Chicken to cart" class="add-cart-btn"
+                                    onclick="addToCart('Tandoori Chicken', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Mutton Seekh Kebab -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Mutton Seekh Kebab Mix" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/mutton-seekh.jpg" />
+                                <div class="product-badge ready">
+                                    🍢 Kebab Mix
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Kebab Mixes
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Mutton Seekh Kebab Mix
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌿 Authentic Spices
+                                    </span>
+                                    <span class="feature-tag">
+                                        ⚡ Ready to Cook
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹850
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            156
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Mutton Seekh Kebab Mix to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mutton Seekh Kebab Mix', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Fish Tandoori Marinade -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Fish Tandoori Marinade" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/fish-tandoori.jpg" />
+                                <div class="product-badge ready">
+                                    🐟 Ready to Grill
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Fish Marinades
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Fish Tandoori Marinade
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌶️ Perfectly Spiced
+                                    </span>
+                                    <span class="feature-tag">
+                                        ⚡ Ready to Cook
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹550
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            112
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Fish Tandoori Marinade to cart" class="add-cart-btn"
+                                    onclick="addToCart('Fish Tandoori Marinade', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Egg Tandoori Marinade -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Egg Tandoori Marinade" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/egg-tandoori.jpeg" />
+                                <div class="product-badge ready">
+                                    🥚 Ready to Grill
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    egg Marinades
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    egg Tandoori Marinade
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                         🔥 Authentic Spices
+                                    </span>
+                                    <span class="feature-tag">
+                                        ⚡ Ready to Cook
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹150
+                                        </span>
+                                        <span class="unit">
+                                            /kg
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            112
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Egg Tandoori Marinade to cart" class="add-cart-btn"
+                                    onclick="addToCart('Egg Tandoori Marinade', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Pickles Section -->
+            <div class="product-category-section" data-category="pickles" id="pickles-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        🫙 Homemade Pickles (Veg &amp; Nonveg)
+                    </h2>
+                    <p class="section-subtitle">
+                        Traditional recipes with authentic flavors
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Mutton Pickle -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Spicy Mutton Pickle" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/mutton-pickle.jpg" />
+                                <div class="product-badge nonveg">
+                                    🍖 Non-Veg
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Non-Veg Pickles
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Spicy Mutton Pickle
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌶️ Extra Spicy
+                                    </span>
+                                    <span class="feature-tag">
+                                        🏺 Traditional
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹450
+                                        </span>
+                                        <span class="unit">
+                                            /500g
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.9
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            178
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Spicy Mutton Pickle to cart" class="add-cart-btn"
+                                    onclick="addToCart('Spicy Mutton Pickle', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Mixed Veg Pickle -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Mixed Vegetable Pickle" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/veg-pickle.jpg" />
+                                <div class="product-badge veg">
+                                    🥕 Veg
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Veg Pickles
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Mixed Vegetable Pickle
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌿 No Preservatives
+                                    </span>
+                                    <span class="feature-tag">
+                                        🏺 Traditional
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹280
+                                        </span>
+                                        <span class="unit">
+                                            /500g
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.8
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            231
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Mixed Vegetable Pickle to cart" class="add-cart-btn"
+                                    onclick="addToCart('Mixed Vegetable Pickle', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Prawn Pickle -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="product-card" itemscope="" itemtype="https://schema.org/Product">
+                            <div class="product-image-container">
+                                <img alt="Spicy Prawn Pickle" class="product-image" itemprop="image" loading="lazy"
+                                    src="images/prawn-pickle.jpg" />
+                                <div class="product-badge nonveg">
+                                    🦐 Non-Veg
+                                </div>
+                                <div aria-label="Add to wishlist" class="like-btn">
+                                    ❤️
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">
+                                    Non-Veg Pickles
+                                </span>
+                                <h3 class="product-title" itemprop="name">
+                                    Spicy Prawn Pickle
+                                </h3>
+                                <div class="product-features">
+                                    <span class="feature-tag">
+                                        🌶️ Medium Spicy
+                                    </span>
+                                    <span class="feature-tag">
+                                        🏺 Traditional
+                                    </span>
+                                </div>
+                                <div class="price-display">
+                                    <span class="price" itemprop="offers" itemscope=""
+                                        itemtype="https://schema.org/Offer">
+                                        <span itemprop="price">
+                                            ₹520
+                                        </span>
+                                        <span class="unit">
+                                            /500g
+                                        </span>
+                                        <meta content="INR" itemprop="priceCurrency" />
+                                    </span>
+                                </div>
+                                <div class="product-rating" itemprop="aggregateRating" itemscope=""
+                                    itemtype="https://schema.org/AggregateRating">
+                                    <div class="stars">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                    <span class="rating-text">
+                                        (
+                                        <span itemprop="ratingValue">
+                                            4.7
+                                        </span>
+                                        /5 -
+                                        <span itemprop="reviewCount">
+                                            145
+                                        </span>
+                                        reviews)
+                                    </span>
+                                </div>
+                                <button aria-label="Add Spicy Prawn Pickle to cart" class="add-cart-btn"
+                                    onclick="addToCart('Spicy Prawn Pickle', this)">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section End -->
+    <!-- Cart Sidebar Start -->
+    <aside aria-label="Shopping cart" class="cart-sidebar" id="cartSidebar" role="complementary">
+        <div class="cart-header">
+            <h3>
+                🛒 Your Cart
+            </h3>
+            <button aria-label="Close cart" class="close-cart" onclick="toggleCart()">
+                ✖️
+            </button>
+        </div>
+        <div class="cart-content" id="cartItems">
+            <div class="empty-cart">
+                <div class="empty-icon">
+                    🛒
+                </div>
+                <p>
+                    Your cart is empty
+                </p>
+                <small>
+                    Add some delicious products!
+                </small>
+            </div>
+        </div>
+        <div class="cart-footer imc-013-6b99de" id="cartFooter">
+            <div class="cart-total">
+                <strong>
+                    Total: ₹
+                    <span id="cartTotal">
+                        0
+                    </span>
+                </strong>
+            </div>
+            <button aria-label="Proceed to checkout" class="checkout-btn" onclick="proceedToOrder()">
+                📱 Order via WhatsApp
+            </button>
+        </div>
+    </aside>
+    <!-- Cart Sidebar End -->
+    <!-- Order Modal Start -->
+    <div aria-hidden="true" aria-labelledby="orderModalTitle" class="order-modal" id="orderModal" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="orderModalTitle">
+                    📝 Complete Your Order
+                </h3>
+                <button aria-label="Close order form" class="close-modal" onclick="closeOrderModal()">
+                    ✖️
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm" novalidate="">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">
+                                👤 Full Name *
+                            </label>
+                            <input aria-required="true" id="customerName" name="customerName" required="" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label for="customerMobile">
+                                📱 Mobile Number *
+                            </label>
+                            <input aria-required="true" id="customerMobile" name="customerMobile" pattern="[0-9]{10}"
+                                required="" type="tel" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerLocation">
+                            📍 Location *
+                        </label>
+                        <select aria-required="true" id="customerLocation" name="customerLocation" required="">
+                            <option value="">
+                                Select Your Location
+                            </option>
+                            <option value="Hyderabad">
+                                Hyderabad
+                            </option>
+                            <option value="Chennai">
+                                Chennai
+                            </option>
+                            <option value="Bangalore">
+                                Bangalore
+                            </option>
+                            <option value="Secunderabad">
+                                Secunderabad
+                            </option>
+                            <option value="Kukatpally">
+                                Kukatpally
+                            </option>
+                            <option value="Gachibowli">
+                                Gachibowli
+                            </option>
+                            <option value="Madhapur">
+                                Madhapur
+                            </option>
+                            <option value="Hitech City">
+                                Hitech City
+                            </option>
+                            <option value="Kondapur">
+                                Kondapur
+                            </option>
+                            <option value="Jubilee Hills">
+                                Jubilee Hills
+                            </option>
+                            <option value="Banjara Hills">
+                                Banjara Hills
+                            </option>
+                            <option value="Other">
+                                Other Location
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">
+                            🏠 Complete Address *
+                        </label>
+                        <textarea aria-required="true" id="customerAddress" name="customerAddress"
+                            placeholder="Enter your complete delivery address" required="" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">
+                            💬 Special Instructions (Optional)
+                        </label>
+                        <textarea id="orderNotes" name="orderNotes"
+                            placeholder="Any special delivery instructions or preferences" rows="2"></textarea>
+                    </div>
+                </form>
+                <div class="order-summary">
+                    <h4>
+                        📋 Order Summary
+                    </h4>
+                    <div id="orderSummaryItems">
+                    </div>
+                    <div class="final-total">
+                        <strong>
+                            🎯 Total Amount: ₹
+                            <span id="finalTotal">
+                                0
+                            </span>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeOrderModal()">
+                    ❌ Cancel
+                </button>
+                <button class="whatsapp-btn" onclick="placeWhatsAppOrder()">
+                    💚 Order via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Order Modal End -->
+    <!-- we are certified section - ISOLATED DESIGN -->
+    <div class="sahaja-certified-section imc-014-6322ae">
+        <div class="sahaja-certified-container">
+            <h2 class="sahaja-section-title">
+                <span>
+                    We Are Certified
+                </span>
+            </h2>
+            <div class="sahaja-certifications-grid">
+                <!-- Certification 1 -->
+                <div class="sahaja-certification-card">
+                    <div class="sahaja-card-accent">
+                    </div>
+                    <div class="sahaja-card-image-container">
+                        <img alt="FSSAI Certification" class="sahaja-certification-image" loading="lazy"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=FSSAI+Certification';this.classList.add('sahaja-error-image')"
+                            src="images/Fssai_for_sahaja.jpg" />
+                    </div>
+                    <div class="sahaja-card-content">
+                        <h3 class="sahaja-certification-title">
+                            FSSAI Certified
+                        </h3>
+                        <p class="sahaja-certification-desc">
+                            Food Safety and Standards Authority of India certified
+                        </p>
+                    </div>
+                </div>
+                <!-- Certification 2 -->
+                <div class="sahaja-certification-card">
+                    <div class="sahaja-card-accent">
+                    </div>
+                    <div class="sahaja-card-image-container">
+                        <img alt="ISO Certification" class="sahaja-certification-image" loading="lazy"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=ISO+Certification';this.classList.add('sahaja-error-image')"
+                            src="images/ISo_FOR_SAHAJA.png" />
+                    </div>
+                    <div class="sahaja-card-content">
+                        <h3 class="sahaja-certification-title">
+                            ISO Certified
+                        </h3>
+                        <p class="sahaja-certification-desc">
+                            International quality standards certification
+                        </p>
+                    </div>
+                </div>
+                <!-- Certification 3 -->
+                <div class="sahaja-certification-card">
+                    <div class="sahaja-card-accent">
+                    </div>
+                    <div class="sahaja-card-image-container">
+                        <img alt="Incorporation Certificate" class="sahaja-certification-image" loading="lazy"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Incorporation';this.classList.add('sahaja-error-image')"
+                            src="images/Incorporation_for_sahaja.jpg" />
+                    </div>
+                    <div class="sahaja-card-content">
+                        <h3 class="sahaja-certification-title">
+                            Registered Company
+                        </h3>
+                        <p class="sahaja-certification-desc">
+                            Officially incorporated business entity
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- we are certified section end - ISOLATED DESIGN -->
+    <!-- Features Section Start -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    🌟 Why Choose Sahaja?
+                </h2>
+                <p class="section-subtitle">
+                    Experience the difference of herbal farming
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            📱
+                        </div>
+                        <h4>
+                            WhatsApp Ordering
+                        </h4>
+                        <p>
+                            Quick and easy ordering through WhatsApp chat
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            🌿
+                        </div>
+                        <h4>
+                            100% Herbal Fed
+                        </h4>
+                        <p>
+                            All our chickens are fed with natural herbal supplements
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            🚚
+                        </div>
+                        <h4>
+                            Fresh Delivery
+                        </h4>
+                        <p>
+                            Same day delivery for fresh farm products
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            🏆
+                        </div>
+                        <h4>
+                            Quality Guaranteed
+                        </h4>
+                        <p>
+                            100% satisfaction guaranteed or money back
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section End -->
+    <!-- WhatsApp CTA Section Start -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="cta-content">
+                        <h3>
+                            🌱 Ready to Order Fresh &amp; Healthy?
+                        </h3>
+                        <p>
+                            Connect with us on WhatsApp for instant ordering and customer support!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <a class="whatsapp-cta-btn" href="https://wa.me/917997658384" rel="noopener" target="_blank">
+                        📱 Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WhatsApp CTA Section End -->
+    <!-- Floating Cart Button -->
+    <button aria-label="View shopping cart" class="cart-float-btn" onclick="toggleCart()">
+        🛒
+        <span class="cart-count imc-013-6b99de" id="cartCount">
+            0
+        </span>
+    </button>
+    
+    
+    <!-- Middle Content End -->
+    <!--MIDDLE CONTENT END-->
+    <!-- SignUp Popup -->
+    <div class="signup_wrapper" id="signupWrapper">
+        <div class="signup_inner">
+            <div class="signup_details">
+                <div class="site_logo">
+                    <a href="javascript:void(0)">
+                        <img alt="Sahaja Herbal Farms Logo" class="sign-logo" src="images/logo_img.png" />
+                    </a>
+                </div>
+                <h3>
+                    Welcome to Sahaja Herbal Farms
+                </h3>
+                <p>
+                    Experience the finest quality herbal eggs and poultry products from our natural farming practices.
+                </p>
+                <a class="clv_btn white_btn pop_signin" href="javascript:;" id="switchToSignin">
+                    Sign In
+                </a>
+                <ul class="social_links">
+                    <li>
+                        <a href="https://www.facebook.com/Sahaja030917">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-facebook">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-twitter">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=917893900122&amp;app=facebook&amp;entry_point=page_cta">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-whatsapp">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-youtube-play">
+                                </i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="signup_form_section">
+                <h4>
+                    Create Account
+                </h4>
+                <div class="underline">
+                </div>
+                <form id="signupForm">
+                    <div class="form_block">
+                        <input class="form_field" name="name" placeholder="Full Name" required="" type="text" />
+                    </div>
+                    <div class="form_block">
+                        <input class="form_field" name="email" placeholder="Email Address" required="" type="email" />
+                    </div>
+                    <div class="form_block">
+                        <input class="form_field" name="password" placeholder="Password" required="" type="password" />
+                    </div>
+                    <button class="clv_btn" type="submit">
+                        Sign Up
+                    </button>
+                </form>
+                <div class="social_button_section">
+                    <a class="fb_btn" href="javascript:;">
+                        <span>
+                            📘
+                        </span>
+                        <span>
+                            Facebook
+                        </span>
+                    </a>
+                    <a class="google_btn" href="javascript:;">
+                        <span>
+                            🔍
+                        </span>
+                        <span>
+                            Google
+                        </span>
+                    </a>
+                </div>
+                <span class="success_close" id="signupClose">
+                    <svg height="20px" viewbox="0 0 212.982 212.982" width="20px">
+                        <path
+                            d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
+                            fill="#9dc709">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- SignIn Popup 
+    <div class="signin_wrapper" id="signinWrapper">
+        <div class="signup_inner">
+            <div class="signup_details">
+                <div class="site_logo">
+                    <a href="#"><img src="images/logo_img.png" alt="Sahaja Herbal Farms Logo"></a>
+                </div>
+                <h3>Welcome Back to Sahaja Herbal Farms</h3>
+                <p>Sign in to access your account and continue enjoying our premium herbal farming products.</p>
+                <a href="javascript:;" class="clv_btn white_btn pop_signup" id="switchToSignup">Sign Up</a>
+                <ul class="social_links">
+                    <li><a href="javascript:;"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="signup_form_section">
+                <h4>Sign In Account</h4>
+                <div class="underline"></div>
+                <form id="signinForm">
+                    <div class="form_block">
+                        <input type="email" class="form_field" placeholder="Email Address" name="email" required>
+                    </div>
+                    <div class="form_block">
+                        <input type="password" class="form_field" placeholder="Password" name="password" required>
+                    </div>
+                    <button type="submit" class="clv_btn">Sign In</button>
+                </form>
+                <div class="social_button_section">
+                    <a href="javascript:;" class="fb_btn">
+                        <span>📘</span>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="javascript:;" class="google_btn">
+                        <span>🔍</span>
+                        <span>Google</span>
+                    </a>
+                </div>
+                <span class="success_close" id="signinClose">
+                    <svg viewBox="0 0 212.982 212.982" width="20px" height="20px">
+                        <path fill="#9dc709"
+                            d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+     Profile Toggle 
+    <div class="profile_toggle" id="profileToggle">
+        <a href="javascript:;"><img src="images/rooster.png" width="80%" height="80%" alt="Profile"></a>
+    </div>-->
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <!-- Top Social Bar -->
+        <div class="social-top-bar">
+            <div class="container">
+                <div class="social-content">
+                    <span>
+                        Get connected with us on social networks:
+                    </span>
+                    <div class="social-icons">
+                        <a class="social-icon facebook" href="https://www.facebook.com/sahajaherbalfarmsofficiall/"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    fill="#3b5998">
+                                </path>
+                            </svg>
+                        </a>
+                        <!--<a href="#" class="social-icon twitter" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="#1da1f2"
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a> -->
+                        <a class="social-icon instagram" href="https://www.instagram.com/sahajaherbalfarmsofficial/"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                    fill="#e4405f">
+                                </path>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-icon whatsapp" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="#25d366"
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488" />
+                            </svg>
+                        </a>-->
+                        <a class="social-icon youtube" href="https://www.youtube.com/@sahajaherbalfarmsofficial"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg height="16" viewbox="0 0 24 24" width="16">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                    fill="#ff0000">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Company Info -->
+                    <div class="footer-section company-section">
+                        <div class="footer-logo">
+                            <div class="logo-container">
+                                <img alt="Sahaja Herbal Farms Logo" src="images/logo_img.png" />
+                            </div>
+                        </div>
+                        <p class="company-desc">
+                            Sahaja Herbal Farms provides quality rich, healthy and tasty Country Chicken, Fresh Eggs,
+                            Mutton and
+                            Sea Food
+                        </p>
+                    </div>
+                    <!-- Products Section -->
+                    <div class="footer-section">
+                        <h4>
+                            PRODUCTS
+                        </h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a class="footer-product-link" data-category="eggs" href="products.html#eggs-section">
+                                    Fresh Eggs
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="chicken"
+                                    href="products.html#chicken-section">
+                                    Fresh Chicken
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="seafood"
+                                    href="products.html#seafood-section">
+                                    Sea Food
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="mutton"
+                                    href="products.html#mutton-section">
+                                    Fresh Mutton
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="marinate"
+                                    href="products.html#marinate-section">
+                                    Marinate Items
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-product-link" data-category="pickles"
+                                    href="products.html#pickles-section">
+                                    Pickles (Veg &amp; Nonveg)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Products Section end-->
+                    <!-- Useful Links Section -->
+                    <div class="footer-section">
+                        <h4>
+                            USEFUL LINKS
+                        </h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#gallery">
+                                    Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#videos">
+                                    Videos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#faq">
+                                    Frequently Asked questions?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#branches">
+                                    Branches
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Contact Section -->
+                    <!-- Contact Section (Fully Isolated) -->
+                    <div class="footer-section contact-section">
+                        <h4>
+                            CONTACT
+                        </h4>
+                        <div class="contact-info-footer">
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    🏠
+                                </span>
+                                <p>
+                                    Sridevi Nilayam, Road No. 2D, H.No. 5-13/A-22/7/A-23, Ground Floor, Sai Ram Enclave,
+                                    Phase 1, Ameenpur (V)(M), Miyapur, Sangareddy Dist, Telangana - 502032
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    ✉️
+                                </span>
+                                <a class="contact-link" href="mailto:info@sahajafarms.com">
+                                    info@sahajafarms.com
+                                </a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">
+                                    📞
+                                </span>
+                                <a class="contact-link" href="tel:+917997658384">
+                                    +91-7997658384
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>
+                        © 2025 Copyright: Sahaja herbal farms
+                    </p>
+                    <div class="footer-logo-small">
+                        <img alt="Sahaja Logo" src="images/logo_img.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    
+</body>
+
+</html>
